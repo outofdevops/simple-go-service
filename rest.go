@@ -76,7 +76,8 @@ func (a *App) createEvent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respondWithJSON(w, http.StatusCreated, eventRes{ID: result.ID, Name: result.Name, State: result.State})
+	respondWithJSON(w, http.StatusCreated, 
+		eventRes{ID: result.ID, Name: result.Name, State: result.State})
 }
 
 func respondWithError(w http.ResponseWriter, code int, message string) {
